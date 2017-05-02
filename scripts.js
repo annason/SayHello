@@ -45,11 +45,13 @@ $(document).ready(function() {
         }
         e.preventDefault();
 
-        dialogList.addClass("get-border");
+
 
         // $("<li></li>").text(input.val()).append(dialogList);
 
-        if (input.val().length > 0) {
+        if (input.val().length > 0 && input.val() != " ") {
+
+            dialogList.addClass("get-border");
 
             var newLi = $("<li class='msg'></li>").text(input.val());
             var newResponse = $("<li class='response'></li>").text(function() {
@@ -72,7 +74,6 @@ $(document).ready(function() {
         if (input.val().length > 0 && (document.querySelectorAll(".outputcol ul li")).length > 16) {
 
             $(".outputcol ul li:first-child, .outputcol ul li:nth-child(2), .outputcol ul li:nth-child(3), .outputcol ul li:nth-child(4)").fadeOut().remove();
-
 
         }
 
